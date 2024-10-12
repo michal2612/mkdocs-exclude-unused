@@ -8,10 +8,10 @@ def read(name):
 
 
 setuptools.setup(
-    name='mkdocs-remove-unused',
+    name='mkdocs-exclude-unused',
     version='1.0.0',
-    packages=['mkdocs-remove-unused'],
-    url='https://github.com/michal2612/mkdocs-remove-unused',
+    packages=['mkdocs-exclude-unused'],
+    url='https://github.com/michal2612/mkdocs-exclude-unused',
     license='MIT',
     author='Michal Domanski',
     description='Simple plugin to exclude notused .md files from docs folder',
@@ -24,7 +24,7 @@ setuptools.setup(
     # Without them, mkdocs will not be able to recognize it.
     entry_points={
         'mkdocs.plugins': [
-            'mkdocs-remove-unused = src:ExcludeUnused',
+            'mkdocs-exclude-unused = src:ExcludeUnused',
         ]
     },
 )

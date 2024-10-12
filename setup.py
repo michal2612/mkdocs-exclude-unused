@@ -24,7 +24,7 @@ setuptools.setup(
     # Without them, mkdocs will not be able to recognize it.
     entry_points={
         'mkdocs.plugins': [
-            'mkdocs-exclude-unused = src:ExcludeUnused',
+            'mkdocs-exclude-unused = mkdocs_exclude_unused:ExcludeUnused',
         ]
     },
 )

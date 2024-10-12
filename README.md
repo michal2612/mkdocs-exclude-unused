@@ -1,4 +1,4 @@
- [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) ![Build & Test]()
+ [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) ![Build & Test](https://github.com/michal2612/mkdocs-exclude-unused/actions/workflows/build.yml/badge.svg)
  ![PyPI - Version](https://img.shields.io/pypi/v/mkdocs-exclude-unused)
 
 

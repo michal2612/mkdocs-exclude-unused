@@ -8,17 +8,30 @@ class ExcludeUnused(mkdocs.plugins.BasePlugin):
     An MkDocs plugin that removes unused .md files from the output.
     """
 
-    valid_pages = []
-
     def on_config(self, config):
         """
         Collect all names of .md files that are present in the config.nav object.
         """
-        self.valid_pages = []
-
-        for item in config.nav:
-            self.valid_pages.append(list(item.values())[0])
+        self.valid_pages = self._collect_nav_targets(config.nav)
         return config
+    
+    def _collect_nav_targets(self, nav_items):
+        """Return a flat list of page URIs referenced anywhere in `nav_items`."""
+        pages = []
+        for entry in nav_items:
+            if isinstance(entry, str):
+                pages.append(entry)
+                continue
+
+            if isinstance(entry, dict):
+                for value in entry.values():
+                    if isinstance(value, str):
+                        pages.append(value)
+                    elif isinstance(value, list):
+                        pages.extend(self._collect_nav_targets(value))
+            elif isinstance(entry, list):
+                pages.extend(self._collect_nav_targets(entry))
+        return pages
     
     def on_files(self, files, config):
         """

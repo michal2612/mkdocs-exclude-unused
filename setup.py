@@ -9,7 +9,7 @@ def read(name):
 
 setuptools.setup(
     name='mkdocs-exclude-unused',
-    version='1.0.4',
+    version='1.0.5',
     packages=['mkdocs_exclude_unused'],
     url='https://github.com/michal2612/mkdocs-exclude-unused',
     license='MIT',
